@@ -1,36 +1,39 @@
 /* ==========================================================================
-   1. Design Tokens & System Variables (Apple / Stanford Inspired Minimalism)
+   1. Design Tokens & Typography Architecture (Apple / Stanford Paradigm)
    ========================================================================== */
 :root {
-    --bg-primary: #ffffff;
-    --bg-secondary: #f5f5f7; /* Apple style light grey background */
+    --bg-primary: #fbfbfd; /* Refined Apple light background */
+    --bg-secondary: #ffffff; 
+    --bg-alt-section: #f5f5f7; /* True modern muted background */
     --card-bg: #ffffff;
-    --text-primary: #1d1d1f; /* SF Pro dark text color */
-    --text-secondary: #6e6e73;
-    --accent: #0066cc; /* Clean research blue */
+    --text-primary: #1d1d1f; /* Premium high contrast dark charcoal */
+    --text-secondary: #6e6e73; /* Smooth secondary gray */
+    --accent: #0066cc; /* Elegant research blue */
     --accent-hover: #004499;
-    --border-color: #d2d2d7;
-    --navbar-bg: rgba(255, 255, 255, 0.8);
-    --shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-    --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-    --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    --border-color: rgba(0, 0, 0, 0.08);
+    --navbar-bg: rgba(255, 255, 255, 0.72);
+    --shadow: 0 8px 30px rgba(0, 0, 0, 0.03);
+    --transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    --font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-heading: 'Playfair Display', Georgia, serif;
 }
 
 [data-theme="dark"] {
-    --bg-primary: #121212;
-    --bg-secondary: #1c1c1e;
-    --card-bg: #2c2c2e;
+    --bg-primary: #0a0a0c; /* High-end pro-dark canvas */
+    --bg-secondary: #121215;
+    --bg-alt-section: #121215;
+    --card-bg: #1c1c1e;
     --text-primary: #f5f5f7;
-    --text-secondary: #aeaeb2;
+    --text-secondary: #86868b;
     --accent: #2997ff;
     --accent-hover: #54aeff;
-    --border-color: #3a3a3c;
-    --navbar-bg: rgba(18, 18, 18, 0.8);
-    --shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    --border-color: rgba(255, 255, 255, 0.08);
+    --navbar-bg: rgba(10, 10, 12, 0.72);
+    --shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
 }
 
 /* ==========================================================================
-   2. Global Resets & Base Semantics
+   2. Global Typography & Core Resets
    ========================================================================== */
 * {
     box-sizing: border-box;
@@ -47,54 +50,52 @@ body {
     background-color: var(--bg-primary);
     color: var(--text-primary);
     font-family: var(--font-family);
-    line-height: 1.6;
+    line-height: 1.65;
     -webkit-font-smoothing: antialiased;
-    transition: background-color 0.3s ease, color 0.3s ease;
+    transition: background-color 0.5s ease, color 0.5s ease;
 }
 
 .container {
     width: 100%;
-    max-width: 1140px;
+    max-width: 1200px;
     margin: 0 auto;
-    padding: 0 24px;
-}
-
-section {
-    position: relative;
+    padding: 0 32px;
 }
 
 .section-padding {
-    padding: 100px 0;
+    padding: 140px 0;
 }
 
 .bg-alt {
-    background-color: var(--bg-secondary);
+    background-color: var(--bg-alt-section);
+    border-top: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
 }
 
 .section-title {
-    font-size: 2.25rem;
-    font-weight: 700;
-    letter-spacing: -0.03em;
-    margin-bottom: 48px;
+    font-family: var(--font-heading);
+    font-size: 2.75rem;
+    font-weight: 400;
+    letter-spacing: -0.02em;
+    margin-bottom: 64px;
     text-align: left;
-    position: relative;
 }
 
 .section-title::after {
     content: '';
     display: block;
-    width: 40px;
+    width: 44px;
     height: 3px;
     background-color: var(--accent);
-    margin-top: 12px;
+    margin-top: 16px;
+    border-radius: 2px;
 }
 
 /* ==========================================================================
-   3. Typography & Buttons
+   3. Micro-Interaction System Buttons
    ========================================================================== */
 h1, h2, h3, h4 {
-    font-weight: 600;
-    letter-spacing: -0.02em;
+    color: var(--text-primary);
 }
 
 a {
@@ -103,31 +104,28 @@ a {
     transition: var(--transition);
 }
 
-a:hover {
-    color: var(--accent-hover);
-}
-
 .btn {
     display: inline-flex;
     align-items: center;
-    gap: 8px;
-    padding: 10px 20px;
-    border-radius: 20px;
-    font-size: 0.95rem;
-    font-weight: 500;
+    gap: 10px;
+    padding: 12px 24px;
+    border-radius: 24px;
+    font-size: 0.9rem;
+    font-weight: 600;
     cursor: pointer;
     transition: var(--transition);
     border: none;
 }
 
 .btn-primary {
-    background-color: var(--accent);
-    color: #ffffff !important;
+    background-color: var(--text-primary);
+    color: var(--bg-primary) !important;
 }
 
 .btn-primary:hover {
-    background-color: var(--accent-hover);
-    transform: translateY(-1px);
+    background-color: var(--accent);
+    color: #ffffff !important;
+    transform: translateY(-2px);
 }
 
 .btn-secondary {
@@ -137,7 +135,8 @@ a:hover {
 }
 
 .btn-secondary:hover {
-    background-color: var(--border-color);
+    border-color: var(--text-primary);
+    transform: translateY(-1px);
 }
 
 .btn-outline {
@@ -147,24 +146,24 @@ a:hover {
 }
 
 .btn-outline:hover {
-    border-color: var(--accent);
-    color: var(--accent) !important;
+    border-color: var(--text-primary);
+    color: var(--text-primary) !important;
 }
 
 .btn-sm {
-    padding: 6px 14px;
-    font-size: 0.85rem;
-    border-radius: 14px;
+    padding: 8px 18px;
+    font-size: 0.8rem;
+    border-radius: 20px;
 }
 
 .btn-lg {
-    padding: 14px 28px;
-    font-size: 1.1rem;
+    padding: 16px 36px;
+    font-size: 1.05rem;
     border-radius: 30px;
 }
 
 /* ==========================================================================
-   4. Sticky Modern Header & Navbar
+   4. Floating Glassmorphic Header Navigation
    ========================================================================== */
 .navbar {
     position: fixed;
@@ -183,28 +182,31 @@ a:hover {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 64px;
-    max-width: 1140px;
+    height: 72px;
+    max-width: 1200px;
     margin: 0 auto;
-    padding: 0 24px;
+    padding: 0 32px;
 }
 
 .nav-logo {
-    font-size: 1.15rem;
-    font-weight: 600;
+    font-size: 1.1rem;
+    font-weight: 700;
+    letter-spacing: -0.01em;
     color: var(--text-primary);
 }
 
 .nav-menu {
     display: flex;
     align-items: center;
-    gap: 32px;
+    gap: 36px;
 }
 
 .nav-link {
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     font-weight: 500;
     color: var(--text-secondary);
+    position: relative;
+    padding: 6px 0;
 }
 
 .nav-link:hover, .nav-link.active {
@@ -215,19 +217,20 @@ a:hover {
     background: transparent;
     border: none;
     color: var(--text-primary);
-    font-size: 1.1rem;
+    font-size: 1rem;
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 36px;
-    height: 36px;
+    width: 40px;
+    height: 40px;
     border-radius: 50%;
     transition: var(--transition);
 }
 
 .theme-btn:hover {
-    background-color: var(--bg-secondary);
+    background-color: var(--border-soft);
+    transform: rotate(15deg);
 }
 
 .mobile-nav-toggle {
@@ -235,218 +238,259 @@ a:hover {
 }
 
 /* ==========================================================================
-   5. Hero Section Config
+   5. High Impact Magazine Hero Configuration
    ========================================================================== */
 .hero-section {
-    padding-top: 160px;
-    padding-bottom: 100px;
+    padding-top: 180px;
+    padding-bottom: 120px;
     display: flex;
     align-items: center;
-    min-height: 80vh;
+    min-height: 90vh;
 }
 
 .hero-container {
     display: grid;
-    grid-template-columns: 280px 1fr;
-    gap: 64px;
+    grid-template-columns: 320px 1fr;
+    gap: 80px;
     align-items: center;
 }
 
 .avatar-placeholder {
-    width: 240px;
-    height: 240px;
+    width: 280px;
+    height: 280px;
     border-radius: 50%;
-    background: linear-gradient(145deg, var(--bg-secondary), var(--border-color));
+    background: linear-gradient(145deg, var(--bg-alt-section), var(--border-color));
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 5rem;
-    color: var(--text-secondary);
-    border: 4px solid var(--card-bg);
+    font-size: 5.5rem;
+    color: var(--accent);
+    border: 1px solid var(--border-color);
     box-shadow: var(--shadow);
+    transition: var(--transition);
+}
+
+.hero-container:hover .avatar-placeholder {
+    transform: scale(1.02);
 }
 
 .hero-content h1 {
-    font-size: 3.5rem;
+    font-family: var(--font-heading);
+    font-size: 4.25rem;
     line-height: 1.1;
-    font-weight: 700;
+    font-weight: 400;
     letter-spacing: -0.04em;
-    margin-bottom: 8px;
+    margin-bottom: 12px;
 }
 
 .hero-content .subtitle {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     color: var(--accent);
     font-weight: 500;
-    margin-bottom: 16px;
+    letter-spacing: -0.01em;
+    margin-bottom: 20px;
 }
 
 .hero-content .tagline {
-    font-size: 1.15rem;
+    font-size: 1.25rem;
     font-weight: 600;
+    line-height: 1.4;
     color: var(--text-primary);
     margin-bottom: 24px;
 }
 
 .hero-content .hero-bio {
-    font-size: 1.1rem;
+    font-size: 1.15rem;
     color: var(--text-secondary);
-    margin-bottom: 36px;
-    max-width: 720px;
+    margin-bottom: 44px;
+    max-width: 760px;
+    line-height: 1.7;
 }
 
 .hero-buttons {
     display: flex;
     flex-wrap: wrap;
-    gap: 12px;
+    gap: 16px;
 }
 
 /* ==========================================================================
-   6. Biography & Layout Grids
+   6. Editorial Biography Block Overlays
    ========================================================================== */
 .about-grid {
     display: grid;
-    grid-template-columns: 1.6fr 1fr;
-    gap: 48px;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 64px;
+    align-items: flex-start;
 }
 
 .about-text p {
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     color: var(--text-secondary);
-    margin-bottom: 20px;
+    margin-bottom: 24px;
+    line-height: 1.75;
 }
 
 .education-card {
     background-color: var(--bg-secondary);
     border: 1px solid var(--border-color);
-    border-radius: 16px;
-    padding: 32px;
+    border-radius: 24px;
+    padding: 40px;
+    box-shadow: var(--shadow);
 }
 
 .education-card h3 {
+    font-family: var(--font-family);
     font-size: 1.3rem;
-    margin-bottom: 24px;
+    margin-bottom: 28px;
     display: flex;
     align-items: center;
-    gap: 12px;
+    gap: 14px;
 }
 
 .edu-item h4 {
-    font-size: 1.1rem;
+    font-size: 1.15rem;
     font-weight: 600;
-    margin-bottom: 4px;
+    margin-bottom: 6px;
+    letter-spacing: -0.01em;
 }
 
 .edu-meta {
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     color: var(--accent);
-    font-weight: 500;
-    margin-bottom: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 16px;
 }
 
 .education-card ul {
-    list-style-position: inside;
+    list-style: none;
     color: var(--text-secondary);
-    padding-left: 4px;
 }
 
 .education-card li {
-    margin-bottom: 8px;
+    margin-bottom: 12px;
+    font-size: 1rem;
+    position: relative;
+    padding-left: 20px;
 }
 
-/* Grids Setup */
-.grid-3 {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-    gap: 24px;
+.education-card li::before {
+    content: "•";
+    color: var(--accent);
+    position: absolute;
+    left: 0;
+    font-weight: bold;
 }
 
 /* ==========================================================================
-   7. Structural Elements (Cards & Highlights)
+   7. Bento-Grid Layout System (Research & Highlights)
    ========================================================================== */
+.grid-3 {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+    gap: 28px;
+}
+
+/* Asymmetric bento-inspired sizing rules built on top of your markup grid rules */
+.full-width-tablet {
+    grid-column: span 2;
+}
+
 .card {
     background-color: var(--card-bg);
     border: 1px solid var(--border-color);
-    border-radius: 14px;
-    padding: 32px;
+    border-radius: 20px;
+    padding: 40px;
     transition: var(--transition);
     box-shadow: var(--shadow);
+    display: flex;
+    flex-direction: column;
 }
 
 .card:hover {
     transform: translateY(-4px);
-    box-shadow: 0 12px 24px rgba(0,0,0,0.08);
     border-color: var(--accent);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.06);
 }
 
 .card-icon {
-    font-size: 2rem;
+    font-size: 2.25rem;
     color: var(--accent);
-    margin-bottom: 20px;
+    margin-bottom: 28px;
 }
 
 .card h3 {
-    font-size: 1.25rem;
-    margin-bottom: 12px;
+    font-size: 1.35rem;
+    margin-bottom: 14px;
+    letter-spacing: -0.01em;
 }
 
 .card p {
     color: var(--text-secondary);
-    font-size: 0.95rem;
+    font-size: 1rem;
+    line-height: 1.6;
 }
 
-/* Research Highlights Custom Layout */
+/* Research Highlights Layer Configurations */
 .highlight-card {
     background-color: var(--card-bg);
-    border-radius: 16px;
+    border-radius: 20px;
     border: 1px solid var(--border-color);
     overflow: hidden;
     box-shadow: var(--shadow);
     transition: var(--transition);
-    padding: 24px;
+    padding: 32px;
 }
 
 .highlight-card:hover {
-    transform: translateY(-2px);
+    transform: translateY(-4px);
+    border-color: var(--text-primary);
 }
 
 .highlight-img-placeholder {
     width: 100%;
-    height: 160px;
-    background-color: var(--bg-secondary);
-    border-radius: 8px;
-    margin-bottom: 20px;
+    height: 180px;
+    background-color: var(--bg-alt-section);
+    border-radius: 12px;
+    margin-bottom: 24px;
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 3.5rem;
     color: var(--border-color);
+    transition: var(--transition);
+}
+
+.highlight-card:hover .highlight-img-placeholder {
+    color: var(--accent);
+    background-color: var(--bg-primary);
 }
 
 .highlight-card h3 {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     margin-bottom: 12px;
 }
 
 .highlight-card p {
     color: var(--text-secondary);
-    font-size: 0.95rem;
+    font-size: 1rem;
 }
 
 /* ==========================================================================
-   8. Clean Academic Publications View
+   8. Structural Modern Publication Strips & Drawers
    ========================================================================== */
 .pub-list {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 24px;
 }
 
 .pub-card {
     background-color: var(--card-bg);
     border: 1px solid var(--border-color);
-    border-radius: 12px;
-    padding: 24px;
+    border-radius: 16px;
+    padding: 36px;
     transition: var(--transition);
 }
 
@@ -456,47 +500,50 @@ a:hover {
 
 .pub-year {
     display: inline-block;
-    font-size: 0.8rem;
-    font-weight: 600;
-    background-color: var(--bg-secondary);
-    padding: 2px 8px;
-    border-radius: 4px;
-    margin-bottom: 8px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    background-color: var(--bg-alt-section);
+    padding: 4px 12px;
+    border-radius: 20px;
+    margin-bottom: 14px;
     color: var(--accent);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
 }
 
 .pub-info h3 {
-    font-size: 1.2rem;
-    margin-bottom: 6px;
-    color: var(--text-primary);
+    font-size: 1.35rem;
+    margin-bottom: 8px;
+    font-weight: 600;
+    letter-spacing: -0.01em;
 }
 
 .pub-authors {
-    font-size: 0.95rem;
+    font-size: 1rem;
     color: var(--text-primary);
-    margin-bottom: 4px;
+    margin-bottom: 6px;
 }
 
 .pub-journal {
     font-style: italic;
     color: var(--text-secondary);
-    font-size: 0.95rem;
-    margin-bottom: 16px;
+    font-size: 1rem;
+    margin-bottom: 24px;
 }
 
 .pub-actions {
     display: flex;
-    gap: 8px;
+    gap: 12px;
     flex-wrap: wrap;
 }
 
 .bibtex-content {
     display: none;
-    margin-top: 16px;
-    background-color: var(--bg-secondary);
-    padding: 16px;
-    border-radius: 8px;
-    font-family: Courier, monospace;
+    margin-top: 20px;
+    background-color: var(--bg-alt-section);
+    padding: 24px;
+    border-radius: 12px;
+    font-family: monospace;
     font-size: 0.85rem;
     overflow-x: auto;
     border: 1px solid var(--border-color);
@@ -504,23 +551,24 @@ a:hover {
 
 .bibtex-content.active {
     display: block;
+    animation: slide-down 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 /* ==========================================================================
-   9. Timeline Layout (Awards Portfolio)
+   9. Timeline Vector Array (Awards Portfolio)
    ========================================================================== */
 .timeline {
     position: relative;
-    max-width: 800px;
+    max-width: 900px;
     margin: 0 auto;
-    padding-left: 32px;
+    padding-left: 40px;
 }
 
 .timeline::before {
     content: '';
     position: absolute;
     left: 8px;
-    top: 0;
+    top: 8px;
     width: 2px;
     height: 100%;
     background-color: var(--border-color);
@@ -528,7 +576,7 @@ a:hover {
 
 .timeline-item {
     position: relative;
-    margin-bottom: 40px;
+    margin-bottom: 56px;
 }
 
 .timeline-item:last-child {
@@ -537,93 +585,115 @@ a:hover {
 
 .timeline-dot {
     position: absolute;
-    left: -32px;
+    left: -40px;
     top: 6px;
-    width: 18px;
-    height: 18px;
+    width: 16px;
+    height: 16px;
     border-radius: 50%;
     background-color: var(--bg-primary);
     border: 3px solid var(--accent);
+    transition: var(--transition);
+}
+
+.timeline-item:hover .timeline-dot {
+    background-color: var(--accent);
+    transform: scale(1.2);
 }
 
 .timeline-date {
-    font-size: 1.1rem;
-    font-weight: 700;
-    color: var(--accent);
-    margin-bottom: 4px;
+    font-family: var(--font-heading);
+    font-size: 2rem;
+    font-weight: 400;
+    color: var(--text-primary);
+    margin-bottom: 6px;
+    line-height: 1;
 }
 
 .timeline-content h3 {
-    font-size: 1.25rem;
-    margin-bottom: 4px;
+    font-size: 1.3rem;
+    margin-bottom: 6px;
 }
 
 .timeline-content .institution {
-    font-weight: 500;
-    font-size: 0.95rem;
-    margin-bottom: 8px;
-    color: var(--text-primary);
+    font-weight: 600;
+    font-size: 0.9rem;
+    margin-bottom: 12px;
+    color: var(--accent);
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
 }
 
 .timeline-content p {
     color: var(--text-secondary);
-    font-size: 0.95rem;
+    font-size: 1rem;
 }
 
 /* ==========================================================================
-   10. CV & Contact Section Elements
+   10. Action Driven CV Grid Layout Block
    ========================================================================== */
 .cv-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 32px;
+    gap: 48px;
+    background: var(--card-bg);
+    padding: 64px;
+    border-radius: 24px;
+    border: 1px solid var(--border-color);
+    box-shadow: var(--shadow);
 }
 
 .cv-info h2 {
-    font-size: 2rem;
-    margin-bottom: 8px;
+    font-family: var(--font-heading);
+    font-size: 2.25rem;
+    margin-bottom: 12px;
+    font-weight: 400;
 }
 
 .cv-info p {
     color: var(--text-secondary);
     font-size: 1.1rem;
-    max-width: 600px;
+    max-width: 640px;
 }
 
-/* Contact Grid Layout */
+/* ==========================================================================
+   11. Contact Matrix Interface Elements
+   ========================================================================== */
 .contact-grid {
     display: grid;
-    grid-template-columns: 1fr 1.5fr;
-    gap: 64px;
+    grid-template-columns: 1fr 1.3fr;
+    gap: 80px;
 }
 
 .contact-info h3 {
-    font-size: 1.5rem;
-    margin-bottom: 16px;
+    font-size: 1.6rem;
+    margin-bottom: 20px;
+    letter-spacing: -0.01em;
 }
 
 .contact-info p {
     color: var(--text-secondary);
-    margin-bottom: 32px;
+    margin-bottom: 40px;
+    font-size: 1.1rem;
 }
 
 .contact-details {
     list-style: none;
-    margin-bottom: 32px;
+    margin-bottom: 44px;
 }
 
 .contact-details li {
     display: flex;
     align-items: center;
-    gap: 16px;
-    margin-bottom: 16px;
-    font-size: 1.05rem;
+    gap: 20px;
+    margin-bottom: 24px;
+    font-size: 1.1rem;
 }
 
 .contact-details i {
     color: var(--accent);
-    width: 20px;
+    width: 24px;
+    font-size: 1.25rem;
 }
 
 .contact-socials {
@@ -635,26 +705,26 @@ a:hover {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 44px;
-    height: 44px;
+    width: 48px;
+    height: 48px;
     border-radius: 50%;
-    background-color: var(--bg-secondary);
+    background-color: var(--bg-alt-section);
     color: var(--text-primary);
     font-size: 1.2rem;
     border: 1px solid var(--border-color);
 }
 
 .contact-socials a:hover {
-    background-color: var(--accent);
-    color: #ffffff;
-    border-color: var(--accent);
+    background-color: var(--text-primary);
+    color: var(--bg-primary);
+    border-color: var(--text-primary);
 }
 
-/* Form Styling */
+/* Premium Form Elements */
 .contact-form {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 24px;
 }
 
 .form-group {
@@ -664,14 +734,16 @@ a:hover {
 }
 
 .form-group label {
-    font-size: 0.9rem;
-    font-weight: 500;
-    color: var(--text-primary);
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
 }
 
 .form-group input, .form-group textarea {
-    padding: 12px 16px;
-    border-radius: 10px;
+    padding: 16px;
+    border-radius: 12px;
     border: 1px solid var(--border-color);
     background-color: var(--card-bg);
     color: var(--text-primary);
@@ -683,16 +755,16 @@ a:hover {
 .form-group input:focus, .form-group textarea:focus {
     outline: none;
     border-color: var(--accent);
-    box-shadow: 0 0 0 4px rgba(0, 102, 204, 0.1);
+    box-shadow: 0 0 0 4px rgba(0, 102, 204, 0.05);
 }
 
 /* ==========================================================================
-   11. Footer Mechanics
+   12. Footer
    ========================================================================== */
 .footer {
-    background-color: var(--bg-secondary);
+    background-color: var(--bg-alt-section);
     border-top: 1px solid var(--border-color);
-    padding: 48px 0;
+    padding: 64px 0;
     color: var(--text-secondary);
     font-size: 0.9rem;
 }
@@ -702,13 +774,13 @@ a:hover {
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
-    gap: 24px;
+    gap: 32px;
 }
 
 .footer-brand h3 {
     color: var(--text-primary);
-    font-size: 1.1rem;
-    margin-bottom: 4px;
+    font-size: 1.15rem;
+    margin-bottom: 6px;
 }
 
 .footer-right {
@@ -717,14 +789,14 @@ a:hover {
 
 .footer-socials {
     display: flex;
-    gap: 16px;
+    gap: 24px;
     justify-content: flex-end;
-    margin-bottom: 12px;
+    margin-bottom: 16px;
 }
 
 .footer-socials a {
     color: var(--text-secondary);
-    font-size: 1.1rem;
+    font-size: 1.15rem;
 }
 
 .footer-socials a:hover {
@@ -732,12 +804,12 @@ a:hover {
 }
 
 /* ==========================================================================
-   12. Animations System (Intersection Observer Engine)
+   13. Dynamic System Animations (Intersection Observer Targets)
    ========================================================================== */
 .reveal {
     opacity: 0;
-    transform: translateY(30px);
-    transition: opacity 0.8s cubic-bezier(0.25, 1, 0.5, 1), transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+    transform: translateY(24px);
+    transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .reveal.active {
@@ -745,13 +817,18 @@ a:hover {
     transform: translateY(0);
 }
 
+@keyframes slide-down {
+    from { opacity: 0; transform: translateY(-8px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
 /* ==========================================================================
-   13. Responsive Media Control Matrix
+   14. Fluid Micro-Responsive Media Interface Matrix
    ========================================================================== */
-@media (max-width: 992px) {
+@media (max-width: 1024px) {
     .hero-container {
         grid-template-columns: 1fr;
-        gap: 32px;
+        gap: 48px;
         text-align: center;
     }
     .hero-avatar {
@@ -763,23 +840,24 @@ a:hover {
     }
     .about-grid {
         grid-template-columns: 1fr;
-    }
-    .contact-grid {
-        grid-template-columns: 1fr;
         gap: 48px;
     }
     .full-width-tablet {
-        grid-column: span 2;
+        grid-column: span 1;
+    }
+    .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 64px;
     }
 }
 
 @media (max-width: 768px) {
     .section-padding {
-        padding: 64px 0;
+        padding: 90px 0;
     }
     .section-title {
-        font-size: 1.85rem;
-        margin-bottom: 32px;
+        font-size: 2.25rem;
+        margin-bottom: 40px;
     }
     .mobile-nav-toggle {
         display: flex;
@@ -789,25 +867,26 @@ a:hover {
         position: fixed;
         top: 0;
         right: -100%;
-        width: 280px;
+        width: 290px;
         height: 100vh;
         background-color: var(--card-bg);
-        box-shadow: -4px 0 20px rgba(0,0,0,0.1);
+        box-shadow: -10px 0 30px rgba(0,0,0,0.08);
         flex-direction: column;
         align-items: flex-start;
-        padding: 80px 40px;
-        gap: 24px;
-        transition: right 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+        padding: 100px 40px;
+        gap: 28px;
+        transition: right 0.4s cubic-bezier(0.16, 1, 0.3, 1);
     }
     .nav-menu.active {
         right: 0;
     }
     .theme-btn {
-        margin-top: 16px;
+        margin-top: 12px;
     }
     .cv-container {
         flex-direction: column;
         text-align: center;
+        padding: 40px;
     }
     .footer-container {
         flex-direction: column;
@@ -818,8 +897,5 @@ a:hover {
     }
     .footer-socials {
         justify-content: center;
-    }
-    .full-width-tablet {
-        grid-column: span 1;
     }
 }
