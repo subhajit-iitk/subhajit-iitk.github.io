@@ -6,8 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const themeToggle = document.getElementById('theme-toggle');
     const themeIcon = themeToggle.querySelector('i');
     
-    // Check local storage or system preferences
-    const savedTheme = localStorage.getItem('theme');
+    const savedTheme = localStorage.getItem('theme-premium-overlay');
     const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
     
     if (savedTheme === 'dark' || (!savedTheme && systemPrefersDark)) {
@@ -23,16 +22,16 @@ document.addEventListener('DOMContentLoaded', () => {
         if (currentTheme === 'dark') {
             document.documentElement.setAttribute('data-theme', 'light');
             themeIcon.className = 'fas fa-moon';
-            localStorage.setItem('theme', 'light');
+            localStorage.setItem('theme-premium-overlay', 'light');
         } else {
             document.documentElement.setAttribute('data-theme', 'dark');
             themeIcon.className = 'fas fa-sun';
-            localStorage.setItem('theme', 'dark');
+            localStorage.setItem('theme-premium-overlay', 'dark');
         }
     });
 
     // ==========================================
-    // 2. Mobile Navigation Setup
+    // 2. Mobile Navigation Overlay Control Matrix
     // ==========================================
     const mobileToggle = document.querySelector('.mobile-nav-toggle');
     const navMenu = document.querySelector('.nav-menu');
@@ -48,7 +47,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Close menu when a navigation item link is clicked
     navLinks.forEach(link => {
         link.addEventListener('click', () => {
             navMenu.classList.remove('active');
@@ -57,7 +55,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // ==========================================
-    // 3. Reveal on Scroll (Intersection Observer)
+    // 3. Reveal on Scroll Pipeline (Intersection Observer)
     // ==========================================
     const revealElements = document.querySelectorAll('.reveal');
     
@@ -65,12 +63,12 @@ document.addEventListener('DOMContentLoaded', () => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('active');
-                observer.unobserve(entry.target); // Animates once
+                observer.unobserve(entry.target); // Animates strictly once per load cycle
             }
         });
     }, {
-        threshold: 0.15,
-        rootMargin: "0px 0px -50px 0px"
+        threshold: 0.05,
+        rootMargin: "0px 0px -30px 0px"
     });
 
     revealElements.forEach(element => {
@@ -78,7 +76,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // ==========================================
-    // 4. Active Navigation Link Tracker
+    // 4. Active Navigation Link Tracker Loop
     // ==========================================
     const sections = document.querySelectorAll('section[id]');
     
@@ -87,7 +85,7 @@ document.addEventListener('DOMContentLoaded', () => {
         
         sections.forEach(current => {
             const sectionHeight = current.offsetHeight;
-            const sectionTop = current.offsetTop - 100;
+            const sectionTop = current.offsetTop - 120;
             const sectionId = current.getAttribute('id');
             const targetLink = document.querySelector(`.nav-menu a[href*=${sectionId}]`);
             
@@ -102,23 +100,23 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // ==========================================
-    // 5. BibTeX Dynamic Toggle Matrix
+    // 5. BibTeX Dynamic Toggle Drawer Actions
     // ==========================================
     const bibtexButtons = document.querySelectorAll('.bibtex-trigger');
 
     bibtexButtons.forEach(button => {
         button.addEventListener('click', (e) => {
-            // Find the closest sibling metadata block
             const currentCard = e.target.closest('.pub-card');
             const bibtexBlock = currentCard.querySelector('.bibtex-content');
             
-            // Toggle view state
             bibtexBlock.classList.toggle('active');
             
             if(bibtexBlock.classList.contains('active')) {
                 button.innerHTML = '<i class="fas fa-times"></i> Hide BibTeX';
+                button.style.borderColor = 'var(--text-primary)';
             } else {
                 button.innerHTML = '<i class="fas fa-quote-right"></i> BibTeX';
+                button.style.borderColor = 'var(--border-color)';
             }
         });
     });
