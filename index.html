@@ -1,321 +1,334 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Academic personal website of Dr. Subhajit Chakraborty - Physicist & Optical Engineer specializing in advanced optical imaging, microscopy, and spectroscopy.">
-    <title>Dr. Subhajit Chakraborty | Physicist & Optical Engineer</title>
+    <meta name="description" content="Academic Portfolio of Dr. Subhajit Chakraborty - Physicist & Optical Engineer">
+    <title>Dr. Subhajit Chakraborty — Radical Optics</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Premium Fonts: Inter and Playfair Display via CDN -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
 
-    <header class="navbar">
-        <div class="nav-container">
-            <a href="#" class="nav-logo">Dr. S. Chakraborty</a>
-            <button class="mobile-nav-toggle" aria-label="Toggle navigationMenu">
-                <i class="fas fa-bars"></i>
-            </button>
-            <nav class="nav-menu">
-                <a href="#about" class="nav-link">About</a>
-                <a href="#research" class="nav-link">Research</a>
-                <a href="#publications" class="nav-link">Publications</a>
-                <a href="#awards" class="nav-link">Awards</a>
-                <a href="#cv" class="nav-link">CV</a>
-                <a href="#contact" class="nav-link">Contact</a>
-                <button id="theme-toggle" class="theme-btn" aria-label="Toggle theme">
-                    <i class="fas fa-moon"></i>
-                </button>
+    <!-- Ambient background glows for glassmorphism layout -->
+    <div class="glow-container">
+        <div class="glow-orb orb-1"></div>
+        <div class="glow-orb orb-2"></div>
+    </div>
+
+    <!-- Navigation Overlay / Header -->
+    <header class="site-header">
+        <div class="header-inner">
+            <a href="#" class="brand-signature">S. Chakraborty<span>/</span>Physicist</a>
+            
+            <nav class="desktop-nav">
+                <a href="#about" class="nav-anchor">System</a>
+                <a href="#research" class="nav-anchor">Core Focus</a>
+                <a href="#publications" class="nav-anchor">Papers</a>
+                <a href="#awards" class="nav-anchor">Milestones</a>
+                <a href="#contact" class="nav-anchor contact-pill">Connect</a>
             </nav>
+
+            <div class="header-controls">
+                <button id="theme-slider" class="action-trigger" aria-label="Switch Universe">
+                    <span class="mode-icon"><i class="fa-solid fa-circle-half-stroke"></i></span>
+                </button>
+                <button class="burger-menu" aria-label="Open Command Menu">
+                    <span></span><span></span>
+                </button>
+            </div>
         </div>
     </header>
 
     <main>
-        <section id="hero" class="hero-section">
-            <div class="container hero-container">
-                <div class="hero-avatar reveal">
-                    <div class="avatar-placeholder">
-                        <i class="fas fa-user-graduate"></i>
-                    </div>
-                </div>
-                <div class="hero-content reveal">
-                    <h1>Dr. Subhajit Chakraborty</h1>
-                    <p class="subtitle">Physicist | Optical Engineer</p>
-                    <p class="tagline">Advancing Optical Imaging, Microscopy, Spectroscopy, and Computational Imaging</p>
-                    <p class="hero-bio">
-                        I am a physicist and optical engineer specializing in advanced optical imaging, microscopy, spectroscopy, optical instrumentation, and computational imaging. My research combines experimental photonics with image processing and data analysis to develop innovative approaches for material characterization and microscopy.
+        <!-- Hero Section: Premium Magazine Style -->
+        <section id="hero" class="hero-viewport">
+            <div class="hero-grid">
+                <div class="hero-editorial">
+                    <div class="ticker-badge"><span>●</span> Operating at the intersection of Physics & Computation</div>
+                    <h1 class="hero-statement">
+                        Advancing the <span class="text-gradient">boundaries</span> of optical imaging systems.
+                    </h1>
+                    <p class="hero-abstract">
+                        I am a physicist and optical engineer combining experimental photonics with complex mathematical image rendering pipelines to engineer radical improvements in microscopy, spectroscopic probing, and material analytics.
                     </p>
-                    <div class="hero-buttons">
-                        <a href="#cv" class="btn btn-primary"><i class="fas fa-file-download"></i> Download CV</a>
-                        <a href="#" class="btn btn-secondary" target="_blank" rel="noopener"><i class="ai ai-google-scholar"></i> <i class="fas fa-graduation-cap"></i> Scholar</a>
-                        <a href="#" class="btn btn-secondary" target="_blank" rel="noopener"><i class="fab fa-linkedin"></i> LinkedIn</a>
-                        <a href="#" class="btn btn-secondary" target="_blank" rel="noopener"><i class="fab fa-github"></i> GitHub</a>
-                        <a href="#contact" class="btn btn-secondary"><i class="fas fa-envelope"></i> Contact</a>
+                    <div class="action-matrix">
+                        <a href="#cv" class="magnetic-btn binary-btn"><span class="btn-text">Curriculum Vitae</span><i class="fa-solid fa-arrow-down-long"></i></a>
+                        <div class="social-cluster">
+                            <a href="#" class="icon-link" aria-label="Scholar"><i class="fa-solid fa-graduation-cap"></i></a>
+                            <a href="#" class="icon-link" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                            <a href="#" class="icon-link" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </section>
-
-        <section id="about" class="about-section section-padding">
-            <div class="container">
-                <h2 class="section-title reveal">Biography</h2>
-                <div class="about-grid reveal">
-                    <div class="about-text">
-                        <p>
-                            Dr. Subhajit Chakraborty is a researcher in photonics science and engineering. He completed his doctoral studies through a prestigious joint PhD program between the <strong>Indian Institute of Technology Kanpur (IIT Kanpur)</strong> and <strong>The University of Melbourne</strong>. This cross-institutional background has shaped his interdisciplinary approach to physical sciences and modern engineering.
-                        </p>
-                        <p>
-                            His core expertise lies at the intersection of optical imaging architectures and precise physical instrumentation. With a strong footing in both experimental photonics and computational frameworks, Dr. Chakraborty builds and refines optical systems tailored for fine-grained microscopy, spectroscopic investigation, and non-destructive optical metrology.
-                        </p>
-                        <p>
-                            Driven by curiosity about how computation can break traditional physical boundaries in hardware, his emerging research directions actively target vision-based automated analysis, computer vision algorithms, and intelligent, software-defined imaging nodes.
-                        </p>
-                    </div>
-                    <div class="education-card">
-                        <h3><i class="fas fa-university"></i> Education</h3>
-                        <div class="edu-item">
-                            <h4>PhD in Photonics Science and Engineering</h4>
-                            <p class="edu-meta">Jointly Awarded Program</p>
-                            <ul>
-                                <li>Indian Institute of Technology Kanpur</li>
-                                <li>The University of Melbourne</li>
-                            </ul>
+                
+                <div class="hero-canvas">
+                    <div class="interactive-lens-frame">
+                        <div class="lens-glass">
+                            <!-- Replace icon with actual premium photo when ready -->
+                            <div class="lens-core-avatar">
+                                <i class="fa-solid fa-microscope"></i>
+                            </div>
+                            <div class="lens-glare"></div>
+                        </div>
+                        <div class="lens-spec">
+                            <span>f = 1.4mm</span>
+                            <span>λ = 405-780nm</span>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="research" class="research-section section-padding bg-alt">
-            <div class="container">
-                <h2 class="section-title reveal">Research Interests</h2>
-                <div class="grid-3 reveal">
-                    <div class="card">
-                        <div class="card-icon"><i class="fas fa-wave-square"></i></div>
-                        <h3>Optical Imaging</h3>
-                        <p>Advanced imaging methodologies for visualization and characterization of microscopic and nanoscale objects.</p>
+        <!-- Academic Credentials Bar -->
+        <section class="ticker-ribbon">
+            <div class="ribbon-wrap">
+                <div class="ribbon-slide">
+                    <span>Joint PhD Framework</span> — <span>Indian Institute of Technology Kanpur</span> — <span>The University of Melbourne</span> — <span>Photonics Science & Engineering</span> —
+                    <span>Joint PhD Framework</span> — <span>Indian Institute of Technology Kanpur</span> — <span>The University of Melbourne</span> — <span>Photonics Science & Engineering</span> —
+                </div>
+            </div>
+        </section>
+
+        <!-- Biography: Minimal Editorial Block -->
+        <section id="about" class="section-layout">
+            <div class="editorial-block">
+                <div class="section-meta">01 / Profile System</div>
+                <div class="editorial-grid">
+                    <h2 class="editorial-heading">Synthesizing physical systems with analytical computational logic.</h2>
+                    <div class="editorial-body">
+                        <p>
+                            Dr. Subhajit Chakraborty's academic foundation spans a dual-continental research program, completing a joint PhD architecture connecting the **Indian Institute of Technology Kanpur** and **The University of Melbourne**. This configuration cross-pollinated rigorous hardware-level experimental engineering with advanced computational physics.
+                        </p>
+                        <p>
+                            His operational paradigms focus on redesigning standard instrumentation boundaries. By embedding computer vision algorithms and custom optimization mechanics directly into the physical imaging plane, his models unlock optical metrology and microscopic structural data previously hidden by wave-diffraction constraints.
+                        </p>
                     </div>
-                    <div class="card">
-                        <div class="card-icon"><i class="fas fa-microscope"></i></div>
-                        <h3>Microscopy</h3>
-                        <p>Development of optical microscopy techniques for enhanced contrast, resolution, and quantitative analysis.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Bento Grid Research Section -->
+        <section id="research" class="section-layout bg-grid">
+            <div class="section-meta">02 / Core Focus Domains</div>
+            <div class="bento-container">
+                
+                <div class="bento-cell size-large reveal">
+                    <div class="bento-tag">Primary Domain</div>
+                    <div class="bento-content">
+                        <h3>Optical Imaging & Metrology</h3>
+                        <p>Engineering novel wavefront illumination profiles and high-precision physical architectures to quantify micro and nanoscale objects without physical degradation.</p>
                     </div>
-                    <div class="card">
-                        <div class="card-icon"><i class="fas fa-chart-bar"></i></div>
+                    <div class="bento-bg-icon"><i class="fa-solid fa-circle-nodes"></i></div>
+                </div>
+
+                <div class="bento-cell size-medium reveal">
+                    <div class="bento-tag">Advanced Setup</div>
+                    <div class="bento-content">
+                        <h3>Microscopy Platforms</h3>
+                        <p>Development of alternative quantitative contrast modules across classical brightfield setups to reveal phase and structural anomalies seamlessly.</p>
+                    </div>
+                    <div class="bento-bg-icon"><i class="fa-solid fa-microscope"></i></div>
+                </div>
+
+                <div class="bento-cell size-small reveal">
+                    <div class="bento-tag">Analytics</div>
+                    <div class="bento-content">
                         <h3>Spectroscopy</h3>
-                        <p>Photothermal and thermal lens spectroscopy for studying molecular interactions and material properties.</p>
+                        <p>Leveraging photothermal and thermal lens spectroscopy arrays to analyze subtle thermodynamic phase transitions in binary structures.</p>
                     </div>
-                    <div class="card">
-                        <div class="card-icon"><i class="fas fa-compass"></i></div>
-                        <h3>Optical Metrology</h3>
-                        <p>Precision optical measurement and characterization methods validating physical models.</p>
-                    </div>
-                    <div class="card">
-                        <div class="card-icon"><i class="fas fa-calculator"></i></div>
-                        <h3>Computational Imaging</h3>
-                        <p>Combining optics, algorithms, and computation to extract structural information from imaging systems.</p>
-                    </div>
-                    <div class="card">
-                        <div class="card-icon"><i class="fas fa-images"></i></div>
+                </div>
+
+                <div class="bento-cell size-small reveal">
+                    <div class="bento-tag">Pipeline</div>
+                    <div class="bento-content">
                         <h3>Image Processing</h3>
-                        <p>Signal and image analysis using statistical pipelines and optimization approaches.</p>
-                    </div>
-                    <div class="card full-width-tablet">
-                        <div class="card-icon"><i class="fas fa-eye"></i></div>
-                        <h3>Computer Vision</h3>
-                        <p>Emerging interests in vision-based data analysis and intelligent, adaptive imaging systems.</p>
+                        <p>Algorithmic post-processing built on statistical frameworks to dramatically increase signal-to-noise thresholds.</p>
                     </div>
                 </div>
+
+                <div class="bento-cell size-tall reveal">
+                    <div class="bento-tag">Emerging Frontier</div>
+                    <div class="bento-content">
+                        <h3>Computational Imaging & Vision</h3>
+                        <p>Replacing complex lens elements with deep code structures. Exploring intelligent edge setups to turn simple camera sensors into deep spatial analytic nodes.</p>
+                    </div>
+                    <div class="bento-bg-icon"><i class="fa-solid fa-eye"></i></div>
+                </div>
+
             </div>
         </section>
 
-        <section id="highlights" class="highlights-section section-padding">
-            <div class="container">
-                <h2 class="section-title reveal">Research Highlights</h2>
-                <div class="grid-3 reveal">
-                    <div class="highlight-card">
-                        <div class="highlight-img-placeholder"><i class="fas fa-circle-nodes"></i></div>
-                        <h3>High-Refractive-Index Nanoparticle Imaging</h3>
-                        <p>Developed novel optical methodologies for imaging and characterization of high-refractive-index nanoparticles using brightfield microscopy layouts.</p>
-                    </div>
-                    <div class="highlight-card">
-                        <div class="highlight-img-placeholder"><i class="fas fa-flask"></i></div>
-                        <h3>Thermal Lens Spectroscopy</h3>
-                        <p>Investigated synergistic molecular interactions in binary liquid mixtures using custom thermal lens spectroscopic measurements.</p>
-                    </div>
-                    <div class="highlight-card">
-                        <div class="highlight-img-placeholder"><i class="fas fa-sliders-h"></i></div>
-                        <h3>Advanced Optical Instrumentation</h3>
-                        <p>Designed and built rugged optical systems alongside dedicated experimental platforms tailored for challenging imaging and spectroscopy applications.</p>
+        <!-- Research Highlights - Minimal Sleek Slits -->
+        <section class="section-layout">
+            <div class="section-meta">03 / Engineering Highlights</div>
+            <div class="slits-container">
+                
+                <div class="slit-row reveal">
+                    <div class="slit-number">A</div>
+                    <div class="slit-main">
+                        <h3>High-Refractive-Index Nanoparticle Metrology</h3>
+                        <p>Formulated an isolation methodology allowing the direct localization and sizing of extreme high-index nanoparticles inside classic brightfield paths.</p>
                     </div>
                 </div>
+
+                <div class="slit-row reveal">
+                    <div class="slit-number">B</div>
+                    <div class="slit-main">
+                        <h3>Thermal Lens Synergistic Analysis</h3>
+                        <p>Mapped molecular energy distribution kinetics across non-ideal binary fluid complexes using targeted thermal lens configurations.</p>
+                    </div>
+                </div>
+
+                <div class="slit-row reveal">
+                    <div class="slit-number">C</div>
+                    <div class="slit-main">
+                        <h3>Custom Optical Instrumentation</h3>
+                        <p>Designed and aligned modular optomechanical rigs incorporating custom automated control logic for micro-spectroscopic fields.</p>
+                    </div>
+                </div>
+
             </div>
         </section>
 
-        <section id="publications" class="publications-section section-padding bg-alt">
-            <div class="container">
-                <h2 class="section-title reveal">Selected Publications</h2>
-                <div class="pub-list reveal">
-                    
-                    <div class="pub-card">
-                        <div class="pub-info">
-                            <span class="pub-year">2026</span>
-                            <h3>Publication Title 1: Advanced Brightfield Metrology for Nanoparticles</h3>
-                            <p class="pub-authors"><strong>S. Chakraborty</strong>, Co-authors listed here.</p>
-                            <p class="pub-journal">Journal of Optical Engineering, 2026</p>
-                        </div>
-                        <div class="pub-actions">
-                            <a href="#" class="btn btn-sm btn-outline"><i class="fas fa-external-link-alt"></i> View Paper</a>
-                            <a href="#" class="btn btn-sm btn-outline"><i class="fas fa-fingerprint"></i> DOI</a>
-                            <button class="btn btn-sm btn-outline bibtex-trigger"><i class="fas fa-quote-right"></i> BibTeX</button>
-                        </div>
-                        <div class="bibtex-content">
-<pre>@article{chakraborty2026advanced,
-  title={Publication Title 1: Advanced Brightfield Metrology for Nanoparticles},
-  author={Chakraborty, Subhajit and Others},
-  journal={Journal of Optical Engineering},
+        <!-- Publications Section: Sleek List with Interactive Drawer -->
+        <section id="publications" class="section-layout bg-grid">
+            <div class="section-meta">04 / Publications & Output</div>
+            <div class="minimal-pub-stack">
+                
+                <!-- Item 1 -->
+                <div class="pub-strip reveal">
+                    <div class="pub-index">01</div>
+                    <div class="pub-details">
+                        <div class="pub-meta-row"><span>Journal Article</span> — <span>2026</span></div>
+                        <h3 class="pub-title-text">Advanced Brightfield Metrology Frameworks for Nanoparticles</h3>
+                        <p class="pub-author-string"><strong>S. Chakraborty</strong>, et al.</p>
+                    </div>
+                    <div class="pub-control-deck">
+                        <a href="#" class="action-pill"><i class="fa-solid fa-arrow-up-right-from-square"></i> Publisher</a>
+                        <button class="action-pill toggle-bib"><i class="fa-solid fa-code"></i> BibTeX</button>
+                    </div>
+                    <div class="drawer-bibtex">
+                        <pre>@article{chakraborty2026nanoparticle,
+  title={Advanced Brightfield Metrology Frameworks for Nanoparticles},
+  author={Chakraborty, Subhajit},
+  journal={Journal of Optical Metrology},
   year={2026}
 }</pre>
-                        </div>
                     </div>
+                </div>
 
-                    <div class="pub-card">
-                        <div class="pub-info">
-                            <span class="pub-year">2025</span>
-                            <h3>Publication Title 2: Thermal Lens Spectroscopy of Binary Mixtures</h3>
-                            <p class="pub-authors">Co-author Name, <strong>S. Chakraborty</strong>.</p>
-                            <p class="pub-journal">Spectroscopy Letters, 2025</p>
-                        </div>
-                        <div class="pub-actions">
-                            <a href="#" class="btn btn-sm btn-outline"><i class="fas fa-external-link-alt"></i> View Paper</a>
-                            <a href="#" class="btn btn-sm btn-outline"><i class="fas fa-fingerprint"></i> DOI</a>
-                            <button class="btn btn-sm btn-outline bibtex-trigger"><i class="fas fa-quote-right"></i> BibTeX</button>
-                        </div>
-                        <div class="bibtex-content">
-<pre>@article{chakraborty2025thermal,
-  title={Publication Title 2: Thermal Lens Spectroscopy of Binary Mixtures},
-  author={Author, Co and Chakraborty, Subhajit},
+                <!-- Item 2 -->
+                <div class="pub-strip reveal">
+                    <div class="pub-index">02</div>
+                    <div class="pub-details">
+                        <div class="pub-meta-row"><span>Letters</span> — <span>2025</span></div>
+                        <h3 class="pub-title-text">Thermal Lens Spectroscopy of Non-Ideal Binary Liquid System Implementations</h3>
+                        <p class="pub-author-string">Co-Author, <strong>S. Chakraborty</strong>.</p>
+                    </div>
+                    <div class="pub-control-deck">
+                        <a href="#" class="action-pill"><i class="fa-solid fa-arrow-up-right-from-square"></i> Publisher</a>
+                        <button class="action-pill toggle-bib"><i class="fa-solid fa-code"></i> BibTeX</button>
+                    </div>
+                    <div class="drawer-bibtex">
+                        <pre>@article{chakraborty2025thermallens,
+  title={Thermal Lens Spectroscopy of Non-Ideal Binary Liquid Systems},
+  author={Chakraborty, Subhajit},
   journal={Spectroscopy Letters},
   year={2025}
 }</pre>
-                        </div>
                     </div>
-
-                    <div class="pub-card">
-                        <div class="pub-info">
-                            <span class="pub-year">2024</span>
-                            <h3>Publication Title 3: Computational Microscopy Configurations</h3>
-                            <p class="pub-authors"><strong>S. Chakraborty</strong>, Primary Advisor Name.</p>
-                            <p class="pub-journal">Nature Photonics Architecture (Placeholder Journal), 2024</p>
-                        </div>
-                        <div class="pub-actions">
-                            <a href="#" class="btn btn-sm btn-outline"><i class="fas fa-external-link-alt"></i> View Paper</a>
-                            <a href="#" class="btn btn-sm btn-outline"><i class="fas fa-fingerprint"></i> DOI</a>
-                            <button class="btn btn-sm btn-outline bibtex-trigger"><i class="fas fa-quote-right"></i> BibTeX</button>
-                        </div>
-                        <div class="bibtex-content">
-<pre>@article{chakraborty2024computational,
-  title={Publication Title 3: Computational Microscopy Configurations},
-  author={Chakraborty, Subhajit},
-  journal={Nature Photonics Architecture},
-  year={2024}
-}</pre>
-                        </div>
-                    </div>
-
                 </div>
+
             </div>
         </section>
 
-        <section id="awards" class="awards-section section-padding">
-            <div class="container">
-                <h2 class="section-title reveal">Awards & Honors</h2>
-                <div class="timeline reveal">
-                    <div class="timeline-item">
-                        <div class="timeline-dot"></div>
-                        <div class="timeline-date">2025</div>
-                        <div class="timeline-content">
-                            <h3>International Travel Grant</h3>
-                            <p class="institution">Anusandhan National Research Foundation (ANRF / SERB)</p>
-                            <p>Awarded financial travel assistance to present core findings at the SPIE Optics + Optoelectronics conference.</p>
-                        </div>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-dot"></div>
-                        <div class="timeline-date">2024</div>
-                        <div class="timeline-content">
-                            <h3>Best Poster Award</h3>
-                            <p class="institution">Academic Photonics Symposium</p>
-                            <p>Recognized for outstanding visual and technical presentation of novel structural microscopic workflows.</p>
-                        </div>
+        <!-- Timeline: Stanford Style Clean Line -->
+        <section id="awards" class="section-layout">
+            <div class="section-meta">05 / Selected Milestones</div>
+            <div class="modern-timeline">
+                
+                <div class="milestone-block reveal">
+                    <div class="m-year">2025</div>
+                    <div class="m-body">
+                        <h3>ANRF (SERB) Travel Grant</h3>
+                        <div class="m-org">Anusandhan National Research Foundation</div>
+                        <p>Awarded competitive global mobility grant funding for presentation vectors at SPIE Optics + Optoelectronics.</p>
                     </div>
                 </div>
+
+                <div class="milestone-block reveal">
+                    <div class="m-year">2024</div>
+                    <div class="m-body">
+                        <h3>Best Poster Distinction</h3>
+                        <div class="m-org">National Photonics Forum</div>
+                        <p>Awarded for high-fidelity technical mapping of spatial photothermal propagation pathways.</p>
+                    </div>
+                </div>
+
             </div>
         </section>
 
-        <section id="cv" class="cv-section section-padding bg-alt">
-            <div class="container cv-container reveal">
-                <div class="cv-info">
-                    <h2>Curriculum Vitae</h2>
-                    <p>Access a comprehensive log of my academic history, complete publication lists, teaching experience, experimental systems profile, and references.</p>
-                </div>
-                <div class="cv-action">
-                    <a href="#" class="btn btn-primary btn-lg" download><i class="fas fa-cloud-download-alt"></i> Download Full CV (PDF)</a>
-                </div>
+        <!-- Interactive CV Node -->
+        <section id="cv" class="cv-hero-banner reveal">
+            <div class="cv-banner-inner">
+                <h2>Looking for the granular timeline?</h2>
+                <p>Download the comprehensive curriculum vitae detailing entire course listings, experimental setups, and verification protocols.</p>
+                <a href="#" class="magnetic-btn dark-btn" download><span class="btn-text">Download CV Architecture (PDF)</span></a>
             </div>
         </section>
 
-        <section id="contact" class="contact-section section-padding">
-            <div class="container">
-                <h2 class="section-title reveal">Get in Touch</h2>
-                <div class="contact-grid reveal">
-                    <div class="contact-info">
-                        <h3>Contact Information</h3>
-                        <p>Feel free to reach out for academic collaborations, research discussions, or institutional inquiries.</p>
-                        <ul class="contact-details">
-                            <li><i class="fas fa-envelope"></i> <span>subhajit.placeholder@email.com</span></li>
-                            <li><i class="fas fa-map-marker-alt"></i> <span>India</span></li>
-                        </ul>
-                        <div class="contact-socials">
-                            <a href="#" target="_blank" rel="noopener" aria-label="Google Scholar"><i class="fas fa-graduation-cap"></i></a>
-                            <a href="#" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                            <a href="#" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
+        <!-- Contact Framework -->
+        <section id="contact" class="section-layout">
+            <div class="section-meta">06 / Terminal Integration</div>
+            <div class="contact-split">
+                <div class="contact-pitch">
+                    <h2 class="pitch-heading">Initiate a research vector.</h2>
+                    <p>Open for discussions on algorithmic imaging, high-precision instrumentation loops, post-doc configurations, and corporate R&D advice.</p>
+                    <div class="direct-link">
+                        <span class="label">SECURE ENVELOPE</span>
+                        <a href="mailto:subhajit.placeholder@email.com" class="email-address">subhajit.placeholder@email.com</a>
+                    </div>
+                </div>
+                
+                <div class="contact-interactive">
+                    <form class="glass-form" action="#" method="POST">
+                        <div class="form-row-twin">
+                            <div class="input-node">
+                                <input type="text" required placeholder="Identity/Name">
+                            </div>
+                            <div class="input-node">
+                                <input type="email" required placeholder="Network/Email Address">
+                            </div>
                         </div>
-                    </div>
-                    <div class="contact-form-container">
-                        <form action="https://formspree.io/f/your-id" method="POST" class="contact-form"> <div class="form-group">
-                                <label for="name">Name</label>
-                                <input type="text" id="name" name="name" required placeholder="Your Name">
-                            </div>
-                            <div class="form-group">
-                                <label for="email">Email</label>
-                                <input type="email" id="email" name="email" required placeholder="your.email@domain.com">
-                            </div>
-                            <div class="form-group">
-                                <label for="message">Message</label>
-                                <textarea id="message" name="message" rows="5" required placeholder="Write your message here..."></textarea>
-                            </div>
-                            <button type="submit" class="btn btn-primary">Send Message <i class="fas fa-paper-plane"></i></button>
-                        </form>
-                    </div>
+                        <div class="input-node">
+                            <textarea rows="4" required placeholder="System Message / Project Parameters..."></textarea>
+                        </div>
+                        <button type="submit" class="form-submit">Transmit Wavefront <i class="fa-solid fa-satellite-dish"></i></button>
+                    </form>
                 </div>
             </div>
         </section>
     </main>
 
-    <footer class="footer">
-        <div class="container footer-container">
-            <div class="footer-brand">
-                <h3>Dr. Subhajit Chakraborty</h3>
-                <p>Physicist | Optical Engineer</p>
+    <!-- Footer System -->
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <div>
+                <p class="f-logo">Dr. Subhajit Chakraborty</p>
+                <p class="f-sub">Physicist // Optical Instrumentation Engineer</p>
             </div>
-            <div class="footer-right">
-                <div class="footer-socials">
-                    <a href="#" aria-label="Scholar"><i class="fas fa-graduation-cap"></i></a>
-                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                    <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+            <div class="footer-meta-space">
+                <div class="f-links">
+                    <a href="#">Scholar</a>
+                    <a href="#">LinkedIn</a>
+                    <a href="#">GitHub</a>
                 </div>
-                <p class="copyright">&copy; 2026 Dr. Subhajit Chakraborty. All rights reserved.</p>
+                <p class="f-copy">&copy; 2026 Subhajit Chakraborty. Computed using semantic mechanics.</p>
             </div>
         </div>
     </footer>
