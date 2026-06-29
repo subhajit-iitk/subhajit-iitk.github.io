@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Terminal | Dr. Subhajit Chakraborty</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <header class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">Dr. S. Chakraborty</a>
+            <button class="mobile-nav-toggle" aria-label="Toggle navigationMenu"><i class="fas fa-bars"></i></button>
+            <nav class="nav-menu">
+                <a href="about.html" class="nav-link">About</a>
+                <a href="research.html" class="nav-link">Research</a>
+                <a href="publications.html" class="nav-link">Publications</a>
+                <a href="photography.html" class="nav-link">Photography</a>
+                <a href="misc.html" class="nav-link">Miscellaneous</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+                <button id="theme-toggle" class="theme-btn"><i class="fas fa-moon"></i></button>
+            </nav>
+        </div>
+    </header>
+
+    <main class="page-padding">
+        <div class="container">
+            <h1 class="section-title reveal">Get in Touch</h1>
+            <div class="contact-grid reveal">
+                <div class="contact-info">
+                    <h3>Contact Information</h3>
+                    <p>Feel free to reach out for academic collaborations, research discussions, or institutional inquiries.</p>
+                    <ul class="contact-details">
+                        <li><i class="fas fa-envelope"></i> <span>subhajit.placeholder@email.com</span></li>
+                        <li><i class="fas fa-map-marker-alt"></i> <span>India</span></li>
+                    </ul>
+                    <div class="contact-socials">
+                        <a href="https://scholar.google.co.in/citations?user=IqnojhUAAAAJ&hl=en" target="_blank" rel="noopener"><i class="fas fa-graduation-cap"></i></a>
+                        <a href="https://www.linkedin.com/in/subhajit-chakraborty-6b9b49198/" target="_blank" rel="noopener"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="contact-form-container">
+                    <form action="https://formspree.io/f/your-id" method="POST" class="contact-form"> 
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" name="name" required placeholder="Your Name">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required placeholder="your.email@domain.com">
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" rows="5" required placeholder="Write your message here..."></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Send Message <i class="fas fa-paper-plane"></i></button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer"><div class="container footer-container"><p>&copy; 2026 Dr. Subhajit Chakraborty. All rights reserved.</p></div></footer>
+    <script src="script.js"></script>
+</body>
+</html>
