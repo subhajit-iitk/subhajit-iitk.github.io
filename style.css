@@ -33,7 +33,7 @@
 }
 
 /* ==========================================================================
-   2. Global Typography & Core Resets (Tightened Spacing Platform)
+   2. Global Typography & Core Resets
    ========================================================================== */
 * {
     box-sizing: border-box;
@@ -62,13 +62,12 @@ body {
     padding: 0 32px;
 }
 
-/* Tightened globally across all pages so content rests naturally under the header */
 .page-padding {
-    padding: 100px 0 20px 0;
+    padding: 140px 0 80px 0;
 }
 
 .section-padding {
-    padding: 30px 0;
+    padding: 60px 0;
 }
 
 .bg-alt {
@@ -82,7 +81,7 @@ body {
     font-size: 2.75rem;
     font-weight: 400;
     letter-spacing: -0.02em;
-    margin-bottom: 30px;
+    margin-bottom: 40px;
     text-align: left;
 }
 
@@ -92,14 +91,14 @@ body {
     width: 44px;
     height: 3px;
     background-color: var(--accent);
-    margin-top: 12px;
+    margin-top: 16px;
     border-radius: 2px;
 }
 
 .page-subtitle {
     font-size: 1.25rem;
     color: var(--text-secondary);
-    margin-bottom: 36px;
+    margin-bottom: 48px;
     max-width: 700px;
 }
 
@@ -232,19 +231,20 @@ a {
 .mobile-nav-toggle { display: none; }
 
 /* ==========================================================================
-   4. Hero Section Spacing Overhaul
+   4. Hero Index Page Layout Structure
    ========================================================================== */
 .hero-section {
-    padding: 10px 0;
+    padding-top: 180px;
+    padding-bottom: 120px;
     display: flex;
     align-items: center;
-    min-height: auto; 
+    min-height: 85vh;
 }
 
 .hero-container {
     display: grid;
     grid-template-columns: 320px 1fr;
-    gap: 60px;
+    gap: 80px;
     align-items: center;
 }
 
@@ -274,7 +274,7 @@ a {
     font-size: 1.4rem;
     color: var(--accent);
     font-weight: 500;
-    margin-bottom: 16px;
+    margin-bottom: 20px;
 }
 
 .hero-content .tagline {
@@ -282,13 +282,13 @@ a {
     font-weight: 600;
     line-height: 1.4;
     color: var(--text-primary);
-    margin-bottom: 20px;
+    margin-bottom: 24px;
 }
 
 .hero-content .hero-bio {
     font-size: 1.15rem;
     color: var(--text-secondary);
-    margin-bottom: 32px;
+    margin-bottom: 44px;
     max-width: 760px;
 }
 
@@ -437,104 +437,6 @@ a {
     font-size: 0.95rem;
 }
 
-/* Awards Timeline Layout */
-.timeline {
-    position: relative;
-    max-width: 900px;
-    margin: 0 auto;
-    padding-left: 40px;
-}
-
-.timeline::before {
-    content: '';
-    position: absolute;
-    left: 8px;
-    top: 8px;
-    width: 2px;
-    height: 100%;
-    background-color: var(--border-color);
-}
-
-.timeline-item {
-    position: relative;
-    margin-bottom: 56px;
-}
-
-.timeline-item:last-child {
-    margin-bottom: 0;
-}
-
-.timeline-dot {
-    position: absolute;
-    left: -40px;
-    top: 6px;
-    width: 16px;
-    height: 16px;
-    border-radius: 50%;
-    background-color: var(--bg-primary);
-    border: 3px solid var(--accent);
-    transition: var(--transition);
-}
-
-.timeline-item:hover .timeline-dot {
-    background-color: var(--accent);
-    transform: scale(1.2);
-}
-
-.timeline-date {
-    font-family: var(--font-heading);
-    font-size: 2rem;
-    font-weight: 400;
-    color: var(--text-primary);
-    margin-bottom: 6px;
-    line-height: 1;
-}
-
-.timeline-content h3 {
-    font-size: 1.3rem;
-    margin-bottom: 6px;
-}
-
-.timeline-content .institution {
-    font-weight: 600;
-    font-size: 0.9rem;
-    margin-bottom: 12px;
-    color: var(--accent);
-    text-transform: uppercase;
-    letter-spacing: 0.02em;
-}
-
-.timeline-content p {
-    color: var(--text-secondary);
-    font-size: 1rem;
-}
-
-/* CV Container Box Styling */
-.cv-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 48px;
-    background: var(--card-bg);
-    padding: 64px;
-    border-radius: 24px;
-    border: 1px solid var(--border-color);
-    box-shadow: var(--shadow);
-}
-
-.cv-info h2 {
-    font-family: var(--font-heading);
-    font-size: 2.25rem;
-    margin-bottom: 12px;
-    font-weight: 400;
-}
-
-.cv-info p {
-    color: var(--text-secondary);
-    font-size: 1.1rem;
-    max-width: 640px;
-}
-
 /* ==========================================================================
    6. Contact Framework Layout
    ========================================================================== */
@@ -558,18 +460,11 @@ a {
     padding: 16px; border-radius: 12px; border: 1px solid var(--border-color); background-color: var(--card-bg); color: var(--text-primary); font-family: var(--font-family); font-size: 1rem; transition: var(--transition);
 }
 .form-group input:focus, .form-group textarea:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 4px rgba(0, 102, 204, 0.05); }
-.form-submit { align-self: flex-start; padding: 16px 36px; border-radius: 30px; border: none; background: var(--text-primary); color: var(--bg-primary); font-weight: 600; cursor: pointer; transition: var(--transition); }
+.form-submit { align-self: flex-start; padding: 16px 36px; border-radius: 30px; border: none; background: var(--text-main); color: var(--bg-primary); font-weight: 600; cursor: pointer; transition: var(--transition); }
 .form-submit:hover { background: var(--accent); color: white; }
 
-/* Footer Config with Tightened Margin Alignment */
-.footer { 
-    background-color: var(--bg-alt-section); 
-    border-top: 1px solid var(--border-color); 
-    padding: 40px 0; 
-    color: var(--text-secondary); 
-    font-size: 0.9rem; 
-    margin-top: 25px; 
-}
+/* Footer Config */
+.footer { background-color: var(--bg-alt-section); border-top: 1px solid var(--border-color); padding: 64px 0; color: var(--text-secondary); font-size: 0.9rem; margin-top: 80px; }
 .footer-container { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 32px; }
 .footer-brand h3 { color: var(--text-primary); font-size: 1.15rem; }
 .footer-right { text-align: right; }
