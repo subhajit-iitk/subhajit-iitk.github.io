@@ -460,7 +460,7 @@ a {
     padding: 16px; border-radius: 12px; border: 1px solid var(--border-color); background-color: var(--card-bg); color: var(--text-primary); font-family: var(--font-family); font-size: 1rem; transition: var(--transition);
 }
 .form-group input:focus, .form-group textarea:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 4px rgba(0, 102, 204, 0.05); }
-.form-submit { align-self: flex-start; padding: 16px 36px; border-radius: 30px; border: none; background: var(--text-main); color: var(--bg-primary); font-weight: 600; cursor: pointer; transition: var(--transition); }
+.form-submit { align-self: flex-start; padding: 16px 36px; border-radius: 30px; border: none; background: var(--text-primary); color: var(--bg-primary); font-weight: 600; cursor: pointer; transition: var(--transition); }
 .form-submit:hover { background: var(--accent); color: white; }
 
 /* Footer Config */
@@ -472,10 +472,23 @@ a {
 .footer-socials a { color: var(--text-secondary); font-size: 1.15rem; }
 .footer-socials a:hover { color: var(--accent); }
 
-/* Animations Matrix */
+/* Scroll Reveal Animations */
 .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1); }
 .reveal.active { opacity: 1; transform: translateY(0); }
 @keyframes slide-down { from { opacity: 0; transform: translateY(-8px); } to { opacity: 1; transform: translateY(0); } }
+
+/* Accessibility: visible keyboard focus */
+a:focus-visible, button:focus-visible, .nav-link:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+    border-radius: 4px;
+}
+
+/* Respect reduced-motion preference */
+@media (prefers-reduced-motion: reduce) {
+    .reveal { opacity: 1; transform: none; transition: none; }
+    *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+}
 
 /* Responsive Adjustments */
 @media (max-width: 1024px) {
