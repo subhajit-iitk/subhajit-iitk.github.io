@@ -234,11 +234,10 @@ a {
    4. Hero Index Page Layout Structure
    ========================================================================== */
 .hero-section {
-    padding-top: 180px;
-    padding-bottom: 120px;
+    padding-top: 20px;
+    padding-bottom: 40px;
     display: flex;
     align-items: center;
-    min-height: 85vh;
 }
 
 .hero-container {
